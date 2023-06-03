@@ -1146,19 +1146,19 @@ if settings['EXCHANGE'] == 'pancakeswap':
         print(timestamp(), 'Using IPCProvider')
         client = Web3(Web3.IPCProvider(my_provider))
 
-    print(timestamp(), "Binance Smart Chain Connected =", client.isConnected())
+    print(timestamp(), "Binance Smart Chain Connected =", client.is_connected())
     print(timestamp(), "Loading Smart Contracts...")
     
     if settings['EXCHANGEVERSION'] == "1":
-        routerAddress = Web3.toChecksumAddress("0x05fF2B0DB69458A0750badebc4f9e13aDd608C7F")
-        factoryAddress = Web3.toChecksumAddress("0xbcfccbde45ce874adcb698cc183debcf17952812")
+        routerAddress = Web3.to_checksum_address("0x05fF2B0DB69458A0750badebc4f9e13aDd608C7F")
+        factoryAddress = Web3.to_checksum_address("0xbcfccbde45ce874adcb698cc183debcf17952812")
     elif settings['EXCHANGEVERSION'] == "2":
-        routerAddress = Web3.toChecksumAddress("0x10ED43C718714eb63d5aA57B78B54704E256024E")
-        factoryAddress = Web3.toChecksumAddress("0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73")
+        routerAddress = Web3.to_checksum_address("0x10ED43C718714eb63d5aA57B78B54704E256024E")
+        factoryAddress = Web3.to_checksum_address("0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73")
     
     routerContract = client.eth.contract(address=routerAddress, abi=routerAbi)
     factoryContract = client.eth.contract(address=factoryAddress, abi=factoryAbi)
-    weth = Web3.toChecksumAddress("0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c")
+    weth = Web3.to_checksum_address("0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c")
     base_symbol = "BNB "
     rugdocchain = '&chain=bsc'
     modified = False
@@ -1190,19 +1190,19 @@ if settings['EXCHANGE'].lower() == 'pancakeswaptestnet':
         print(timestamp(), 'Using IPCProvider')
         client = Web3(Web3.IPCProvider(my_provider))
     
-    print(timestamp(), "Binance Smart Chain testnet Connected =", client.isConnected())
+    print(timestamp(), "Binance Smart Chain testnet Connected =", client.is_connected())
     print(timestamp(), "Loading Smart Contracts...")
     
     if settings['EXCHANGEVERSION'] == "1":
-        routerAddress = Web3.toChecksumAddress("0x05fF2B0DB69458A0750badebc4f9e13aDd608C7F")
-        factoryAddress = Web3.toChecksumAddress("0xbcfccbde45ce874adcb698cc183debcf17952812")
+        routerAddress = Web3.to_checksum_address("0x05fF2B0DB69458A0750badebc4f9e13aDd608C7F")
+        factoryAddress = Web3.to_checksum_address("0xbcfccbde45ce874adcb698cc183debcf17952812")
     elif settings['EXCHANGEVERSION'] == "2":
-        routerAddress = Web3.toChecksumAddress("0xD99D1c33F9fC3444f8101754aBC46c52416550D1")
-        factoryAddress = Web3.toChecksumAddress("0x6725F303b657a9451d8BA641348b6761A6CC7a17")
+        routerAddress = Web3.to_checksum_address("0xD99D1c33F9fC3444f8101754aBC46c52416550D1")
+        factoryAddress = Web3.to_checksum_address("0x6725F303b657a9451d8BA641348b6761A6CC7a17")
     
     routerContract = client.eth.contract(address=routerAddress, abi=routerAbi)
     factoryContract = client.eth.contract(address=factoryAddress, abi=factoryAbi)
-    weth = Web3.toChecksumAddress("0xae13d989dac2f0debff460ac112a837c89baa7cd")
+    weth = Web3.to_checksum_address("0xae13d989dac2f0debff460ac112a837c89baa7cd")
     base_symbol = "BNBt"
     rugdocchain = '&chain=bsc'
     modified = False
@@ -1233,15 +1233,15 @@ if settings['EXCHANGE'].lower() == 'traderjoe':
         print(timestamp(), 'Using IPCProvider')
         client = Web3(Web3.IPCProvider(my_provider))
 
-    print(timestamp(), "AVAX Smart Chain Connected =", client.isConnected())
+    print(timestamp(), "AVAX Smart Chain Connected =", client.is_connected())
     print(timestamp(), "Loading Smart Contracts...")
     
-    routerAddress = Web3.toChecksumAddress("0x60aE616a2155Ee3d9A68541Ba4544862310933d4")
-    factoryAddress = Web3.toChecksumAddress("0x9Ad6C38BE94206cA50bb0d90783181662f0Cfa10")
+    routerAddress = Web3.to_checksum_address("0x60aE616a2155Ee3d9A68541Ba4544862310933d4")
+    factoryAddress = Web3.to_checksum_address("0x9Ad6C38BE94206cA50bb0d90783181662f0Cfa10")
     
     routerContract = client.eth.contract(address=routerAddress, abi=joeRouter)
     factoryContract = client.eth.contract(address=factoryAddress, abi=factoryAbi)
-    weth = Web3.toChecksumAddress("0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7")
+    weth = Web3.to_checksum_address("0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7")
     base_symbol = "AVAX"
     rugdocchain = '&chain=avax'
     modified = True
@@ -1270,13 +1270,13 @@ if settings["EXCHANGE"] == 'pangolin':
         print(timestamp(), 'Using IPCProvider')
         client = Web3(Web3.IPCProvider(my_provider))
 
-    print(timestamp(), "AVAX Chain Connected =", client.isConnected())
+    print(timestamp(), "AVAX Chain Connected =", client.is_connected())
     print(timestamp(), "Loading Smart Contracts...")
-    routerAddress = Web3.toChecksumAddress("0xE54Ca86531e17Ef3616d22Ca28b0D458b6C89106")
-    factoryAddress = Web3.toChecksumAddress("0xefa94DE7a4656D787667C749f7E1223D71E9FD88")
+    routerAddress = Web3.to_checksum_address("0xE54Ca86531e17Ef3616d22Ca28b0D458b6C89106")
+    factoryAddress = Web3.to_checksum_address("0xefa94DE7a4656D787667C749f7E1223D71E9FD88")
     routerContract = client.eth.contract(address=routerAddress, abi=pangolinAbi)
     factoryContract = client.eth.contract(address=factoryAddress, abi=factoryAbi)
-    weth = Web3.toChecksumAddress("0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7")
+    weth = Web3.to_checksum_address("0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7")
     base_symbol = "AVAX"
     rugdocchain = '&chain=avax'
     modified = True
@@ -1305,16 +1305,16 @@ if settings['EXCHANGE'] == 'pinkswap':
         print(timestamp(), 'Using IPCProvider')
         client = Web3(Web3.IPCProvider(my_provider))
     
-    print(timestamp(), "Binance Smart Chain Connected =", client.isConnected())
+    print(timestamp(), "Binance Smart Chain Connected =", client.is_connected())
     print(timestamp(), "Loading PinkSwap Smart Contracts...")
     
-    routerAddress = Web3.toChecksumAddress("0x319EF69a98c8E8aAB36Aea561Daba0Bf3D0fa3ac")
-    factoryAddress = Web3.toChecksumAddress("0x7d2ce25c28334e40f37b2a068ec8d5a59f11ea54")
+    routerAddress = Web3.to_checksum_address("0x319EF69a98c8E8aAB36Aea561Daba0Bf3D0fa3ac")
+    factoryAddress = Web3.to_checksum_address("0x7d2ce25c28334e40f37b2a068ec8d5a59f11ea54")
     
     routerContract = client.eth.contract(address=routerAddress, abi=routerAbi)
     factoryContract = client.eth.contract(address=factoryAddress, abi=factoryAbi)
     
-    weth = Web3.toChecksumAddress("0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c")
+    weth = Web3.to_checksum_address("0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c")
     base_symbol = "BNB "
     rugdocchain = '&chain=bsc'
     modified = False
@@ -1345,16 +1345,16 @@ if settings['EXCHANGE'] == 'biswap':
         print(timestamp(), 'Using IPCProvider')
         client = Web3(Web3.IPCProvider(my_provider))
     
-    print(timestamp(), "Binance Smart Chain Connected =", client.isConnected())
+    print(timestamp(), "Binance Smart Chain Connected =", client.is_connected())
     print(timestamp(), "Loading BiSwap Smart Contracts...")
     
-    routerAddress = Web3.toChecksumAddress("0x3a6d8cA21D1CF76F653A67577FA0D27453350dD8")
-    factoryAddress = Web3.toChecksumAddress("0x858E3312ed3A876947EA49d572A7C42DE08af7EE")
+    routerAddress = Web3.to_checksum_address("0x3a6d8cA21D1CF76F653A67577FA0D27453350dD8")
+    factoryAddress = Web3.to_checksum_address("0x858E3312ed3A876947EA49d572A7C42DE08af7EE")
     
     routerContract = client.eth.contract(address=routerAddress, abi=routerAbi)
     factoryContract = client.eth.contract(address=factoryAddress, abi=factoryAbi)
     
-    weth = Web3.toChecksumAddress("0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c")
+    weth = Web3.to_checksum_address("0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c")
     base_symbol = "BNB "
     rugdocchain = '&chain=bsc'
     modified = False
@@ -1384,16 +1384,16 @@ elif settings['EXCHANGE'].lower() == 'babyswap':
         print(timestamp(), 'Using IPCProvider')
         client = Web3(Web3.IPCProvider(my_provider))
 
-    print(timestamp(), "Binance Smart Chain Connected =", client.isConnected())
+    print(timestamp(), "Binance Smart Chain Connected =", client.is_connected())
     print(timestamp(), "Loading BabySwap Smart Contracts...")
 
-    routerAddress = Web3.toChecksumAddress("0x325E343f1dE602396E256B67eFd1F61C3A6B38Bd")
-    factoryAddress = Web3.toChecksumAddress("0x86407bEa2078ea5f5EB5A52B2caA963bC1F889Da")
+    routerAddress = Web3.to_checksum_address("0x325E343f1dE602396E256B67eFd1F61C3A6B38Bd")
+    factoryAddress = Web3.to_checksum_address("0x86407bEa2078ea5f5EB5A52B2caA963bC1F889Da")
 
     routerContract = client.eth.contract(address=routerAddress, abi=routerAbi)
     factoryContract = client.eth.contract(address=factoryAddress, abi=factoryAbi)
 
-    weth = Web3.toChecksumAddress("0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c")
+    weth = Web3.to_checksum_address("0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c")
     base_symbol = "BNB "
     rugdocchain = '&chain=bsc'
     modified = False
@@ -1423,16 +1423,16 @@ if settings['EXCHANGE'] == 'bakeryswap':
         print(timestamp(), 'Using IPCProvider')
         client = Web3(Web3.IPCProvider(my_provider))
 
-    print(timestamp(), "Binance Smart Chain Connected =", client.isConnected())
+    print(timestamp(), "Binance Smart Chain Connected =", client.is_connected())
     print(timestamp(), "Loading BakerySwap Smart Contracts...")
 
-    routerAddress = Web3.toChecksumAddress("0xCDe540d7eAFE93aC5fE6233Bee57E1270D3E330F")
-    factoryAddress = Web3.toChecksumAddress("0x01bF7C66c6BD861915CdaaE475042d3c4BaE16A7")
+    routerAddress = Web3.to_checksum_address("0xCDe540d7eAFE93aC5fE6233Bee57E1270D3E330F")
+    factoryAddress = Web3.to_checksum_address("0x01bF7C66c6BD861915CdaaE475042d3c4BaE16A7")
 
     routerContract = client.eth.contract(address=routerAddress, abi=bakeryRouter)
     factoryContract = client.eth.contract(address=factoryAddress, abi=factoryAbi)
 
-    weth = Web3.toChecksumAddress("0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c")
+    weth = Web3.to_checksum_address("0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c")
     base_symbol = "BNB "
     rugdocchain = '&chain=bsc'
     modified = True
@@ -1461,17 +1461,17 @@ if settings['EXCHANGE'] == 'apeswap':
         print(timestamp(), 'Using IPCProvider')
         client = Web3(Web3.IPCProvider(my_provider))
 
-    print(timestamp(), "Binance Smart Chain Connected =", client.isConnected())
+    print(timestamp(), "Binance Smart Chain Connected =", client.is_connected())
     print(timestamp(), "Loading ApeSwap Smart Contracts...")
     
-    routerAddress = Web3.toChecksumAddress("0xcF0feBd3f17CEf5b47b0cD257aCf6025c5BFf3b7")
-    factoryAddress = Web3.toChecksumAddress("0x0841BD0B734E4F5853f0dD8d7Ea041c241fb0Da6")
+    routerAddress = Web3.to_checksum_address("0xcF0feBd3f17CEf5b47b0cD257aCf6025c5BFf3b7")
+    factoryAddress = Web3.to_checksum_address("0x0841BD0B734E4F5853f0dD8d7Ea041c241fb0Da6")
     
     routerContract = client.eth.contract(address=routerAddress, abi=routerAbi)
     factoryContract = client.eth.contract(address=factoryAddress, abi=factoryAbi)
     
-    weth = Web3.toChecksumAddress("0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c")
-    busd = Web3.toChecksumAddress("0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56")
+    weth = Web3.to_checksum_address("0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c")
+    busd = Web3.to_checksum_address("0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56")
     base_symbol = "BNB "
     rugdocchain = '&chain=bsc'
     modified = False
@@ -1500,13 +1500,13 @@ elif settings["EXCHANGE"] == 'uniswap':
         print(timestamp(), 'Using IPCProvider')
         client = Web3(Web3.IPCProvider(my_provider))
 
-    print(timestamp(), "Uniswap Chain Connected =", client.isConnected())
+    print(timestamp(), "Uniswap Chain Connected =", client.is_connected())
     print(timestamp(), "Loading Smart Contracts...")
-    routerAddress = Web3.toChecksumAddress("0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D")
-    factoryAddress = Web3.toChecksumAddress("0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f")
+    routerAddress = Web3.to_checksum_address("0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D")
+    factoryAddress = Web3.to_checksum_address("0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f")
     routerContract = client.eth.contract(address=routerAddress, abi=routerAbi)
     factoryContract = client.eth.contract(address=factoryAddress, abi=factoryAbi)
-    weth = Web3.toChecksumAddress("0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2")
+    weth = Web3.to_checksum_address("0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2")
     base_symbol = "ETH "
     rugdocchain = '&chain=eth'
     modified = False
@@ -1535,13 +1535,13 @@ elif settings["EXCHANGE"] == 'uniswaptestnet':
         print(timestamp(), 'Using IPCProvider')
         client = Web3(Web3.IPCProvider(my_provider))
 
-    print(timestamp(), "Uniswap Chain Connected =", client.isConnected())
+    print(timestamp(), "Uniswap Chain Connected =", client.is_connected())
     print(timestamp(), "Loading Smart Contracts...")
-    routerAddress = Web3.toChecksumAddress("0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D")
-    factoryAddress = Web3.toChecksumAddress("0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f")
+    routerAddress = Web3.to_checksum_address("0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D")
+    factoryAddress = Web3.to_checksum_address("0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f")
     routerContract = client.eth.contract(address=routerAddress, abi=routerAbi)
     factoryContract = client.eth.contract(address=factoryAddress, abi=factoryAbi)
-    weth = Web3.toChecksumAddress("0xc778417e063141139fce010982780140aa0cd5ab")
+    weth = Web3.to_checksum_address("0xc778417e063141139fce010982780140aa0cd5ab")
     base_symbol = "ETHt"
     rugdocchain = '&chain=eth'
     modified = False
@@ -1569,13 +1569,13 @@ elif settings["EXCHANGE"] == 'kuswap':
         print(timestamp(), 'Using IPCProvider')
         client = Web3(Web3.IPCProvider(my_provider))
 
-    print(timestamp(), "KuCoin Chain Connected =", client.isConnected())
+    print(timestamp(), "KuCoin Chain Connected =", client.is_connected())
     print(timestamp(), "Loading KuSwap Smart Contracts...")
-    routerAddress = Web3.toChecksumAddress("0xa58350d6dee8441aa42754346860e3545cc83cda")
-    factoryAddress = Web3.toChecksumAddress("0xAE46cBBCDFBa3bE0F02F463Ec5486eBB4e2e65Ae")
+    routerAddress = Web3.to_checksum_address("0xa58350d6dee8441aa42754346860e3545cc83cda")
+    factoryAddress = Web3.to_checksum_address("0xAE46cBBCDFBa3bE0F02F463Ec5486eBB4e2e65Ae")
     routerContract = client.eth.contract(address=routerAddress, abi=routerAbi)
     factoryContract = client.eth.contract(address=factoryAddress, abi=factoryAbi)
-    weth = Web3.toChecksumAddress("0x4446Fc4eb47f2f6586f9fAAb68B3498F86C07521")
+    weth = Web3.to_checksum_address("0x4446Fc4eb47f2f6586f9fAAb68B3498F86C07521")
     base_symbol = "KCS"
     rugdocchain = '&chain=kcc'
     modified = False
@@ -1603,13 +1603,13 @@ elif settings["EXCHANGE"] == 'alphaswap':
         print(timestamp(), 'Using IPCProvider')
         client = Web3(Web3.IPCProvider(my_provider))
 
-    print(timestamp(), "KuCoin Chain Connected =", client.isConnected())
+    print(timestamp(), "KuCoin Chain Connected =", client.is_connected())
     print(timestamp(), "Loading AlphaSwap Smart Contracts...")
-    routerAddress = Web3.toChecksumAddress("0x6074761Ae58B88aC6b12396A290164e0e20b46Fe")
-    factoryAddress = Web3.toChecksumAddress("0x87383F77AddEB3cEaD7A78009AfcCF53C9F5bfCf")
+    routerAddress = Web3.to_checksum_address("0x6074761Ae58B88aC6b12396A290164e0e20b46Fe")
+    factoryAddress = Web3.to_checksum_address("0x87383F77AddEB3cEaD7A78009AfcCF53C9F5bfCf")
     routerContract = client.eth.contract(address=routerAddress, abi=alphaAbi)
     factoryContract = client.eth.contract(address=factoryAddress, abi=factoryAbi)
-    weth = Web3.toChecksumAddress("0x4446Fc4eb47f2f6586f9fAAb68B3498F86C07521")
+    weth = Web3.to_checksum_address("0x4446Fc4eb47f2f6586f9fAAb68B3498F86C07521")
     base_symbol = "KCS"
     rugdocchain = '&chain=kcc'
     modified = True
@@ -1636,13 +1636,13 @@ elif settings["EXCHANGE"] == 'spookyswap':
         print(timestamp(), 'Using IPCProvider')
         client = Web3(Web3.IPCProvider(my_provider))
 
-    print(timestamp(), "FANTOM Chain Connected =", client.isConnected())
+    print(timestamp(), "FANTOM Chain Connected =", client.is_connected())
     print(timestamp(), "Loading Smart Contracts...")
-    routerAddress = Web3.toChecksumAddress("0xF491e7B69E4244ad4002BC14e878a34207E38c29")
-    factoryAddress = Web3.toChecksumAddress("0x152eE697f2E276fA89E96742e9bB9aB1F2E61bE3")
+    routerAddress = Web3.to_checksum_address("0xF491e7B69E4244ad4002BC14e878a34207E38c29")
+    factoryAddress = Web3.to_checksum_address("0x152eE697f2E276fA89E96742e9bB9aB1F2E61bE3")
     routerContract = client.eth.contract(address=routerAddress, abi=routerAbi)
     factoryContract = client.eth.contract(address=factoryAddress, abi=factoryAbi)
-    weth = Web3.toChecksumAddress("0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83")
+    weth = Web3.to_checksum_address("0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83")
     base_symbol = "FTM "
     rugdocchain = '&chain=ftm'
     modified = False
@@ -1670,13 +1670,13 @@ elif settings["EXCHANGE"] == 'protofi':
         print(timestamp(), 'Using IPCProvider')
         client = Web3(Web3.IPCProvider(my_provider))
 
-    print(timestamp(), "FANTOM Chain Connected =", client.isConnected())
+    print(timestamp(), "FANTOM Chain Connected =", client.is_connected())
     print(timestamp(), "Loading Smart Contracts...")
-    routerAddress = Web3.toChecksumAddress("0xF4C587a0972Ac2039BFF67Bc44574bB403eF5235")
-    factoryAddress = Web3.toChecksumAddress("0x39720E5Fe53BEEeb9De4759cb91d8E7d42c17b76")
+    routerAddress = Web3.to_checksum_address("0xF4C587a0972Ac2039BFF67Bc44574bB403eF5235")
+    factoryAddress = Web3.to_checksum_address("0x39720E5Fe53BEEeb9De4759cb91d8E7d42c17b76")
     routerContract = client.eth.contract(address=routerAddress, abi=protofirouter)
     factoryContract = client.eth.contract(address=factoryAddress, abi=factoryAbi)
-    weth = Web3.toChecksumAddress("0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83")
+    weth = Web3.to_checksum_address("0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83")
     base_symbol = "FTM "
     rugdocchain = '&chain=ftm'
     modified = False
@@ -1704,13 +1704,13 @@ elif settings["EXCHANGE"] == 'spiritswap':
         print(timestamp(), 'Using IPCProvider')
         client = Web3(Web3.IPCProvider(my_provider))
 
-    print(timestamp(), "FANTOM Chain Connected =", client.isConnected())
+    print(timestamp(), "FANTOM Chain Connected =", client.is_connected())
     print(timestamp(), "Loading Smart Contracts...")
-    routerAddress = Web3.toChecksumAddress("0x16327E3FbDaCA3bcF7E38F5Af2599D2DDc33aE52")
-    factoryAddress = Web3.toChecksumAddress("0xEF45d134b73241eDa7703fa787148D9C9F4950b0")
+    routerAddress = Web3.to_checksum_address("0x16327E3FbDaCA3bcF7E38F5Af2599D2DDc33aE52")
+    factoryAddress = Web3.to_checksum_address("0xEF45d134b73241eDa7703fa787148D9C9F4950b0")
     routerContract = client.eth.contract(address=routerAddress, abi=routerAbi)
     factoryContract = client.eth.contract(address=factoryAddress, abi=factoryAbi)
-    weth = Web3.toChecksumAddress("0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83")
+    weth = Web3.to_checksum_address("0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83")
     base_symbol = "FTM "
     rugdocchain = '&chain=ftm'
     modified = False
@@ -1738,13 +1738,13 @@ elif settings["EXCHANGE"] == 'quickswap':
         print(timestamp(), 'Using IPCProvider')
         client = Web3(Web3.IPCProvider(my_provider))
 
-    print(timestamp(), "Matic Chain Connected =", client.isConnected())
+    print(timestamp(), "Matic Chain Connected =", client.is_connected())
     print(timestamp(), "Loading Smart Contracts...")
-    routerAddress = Web3.toChecksumAddress("0xa5E0829CaCEd8fFDD4De3c43696c57F7D7A678ff")
-    factoryAddress = Web3.toChecksumAddress("0x5757371414417b8c6caad45baef941abc7d3ab32")
+    routerAddress = Web3.to_checksum_address("0xa5E0829CaCEd8fFDD4De3c43696c57F7D7A678ff")
+    factoryAddress = Web3.to_checksum_address("0x5757371414417b8c6caad45baef941abc7d3ab32")
     routerContract = client.eth.contract(address=routerAddress, abi=routerAbi)
     factoryContract = client.eth.contract(address=factoryAddress, abi=factoryAbi)
-    weth = Web3.toChecksumAddress("0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270")
+    weth = Web3.to_checksum_address("0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270")
     base_symbol = "MATIC"
     rugdocchain = '&chain=poly'
     modified = False
@@ -1771,13 +1771,13 @@ elif settings["EXCHANGE"] == 'polygon-apeswap':
     else:
         print(timestamp(), 'Using IPCProvider')
         client = Web3(Web3.IPCProvider(my_provider))
-    print(timestamp(), "Matic Chain Connected =", client.isConnected())
+    print(timestamp(), "Matic Chain Connected =", client.is_connected())
     print(timestamp(), "Loading Smart Contracts...")
-    routerAddress = Web3.toChecksumAddress("0xC0788A3aD43d79aa53B09c2EaCc313A787d1d607")
-    factoryAddress = Web3.toChecksumAddress("0xCf083Be4164828f00cAE704EC15a36D711491284")
+    routerAddress = Web3.to_checksum_address("0xC0788A3aD43d79aa53B09c2EaCc313A787d1d607")
+    factoryAddress = Web3.to_checksum_address("0xCf083Be4164828f00cAE704EC15a36D711491284")
     routerContract = client.eth.contract(address=routerAddress, abi=routerAbi)
     factoryContract = client.eth.contract(address=factoryAddress, abi=factoryAbi)
-    weth = Web3.toChecksumAddress("0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270")
+    weth = Web3.to_checksum_address("0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270")
     base_symbol = "MATIC"
     rugdocchain = '&chain=poly'
     modified = False
@@ -1805,13 +1805,13 @@ elif settings["EXCHANGE"] == 'waultswap':
         print(timestamp(), 'Using IPCProvider')
         client = Web3(Web3.IPCProvider(my_provider))
 
-    print(timestamp(), "Matic Chain Connected =", client.isConnected())
+    print(timestamp(), "Matic Chain Connected =", client.is_connected())
     print(timestamp(), "Loading Smart Contracts...")
-    routerAddress = Web3.toChecksumAddress("0x3a1D87f206D12415f5b0A33E786967680AAb4f6d")
-    factoryAddress = Web3.toChecksumAddress("0xa98ea6356A316b44Bf710D5f9b6b4eA0081409Ef")
+    routerAddress = Web3.to_checksum_address("0x3a1D87f206D12415f5b0A33E786967680AAb4f6d")
+    factoryAddress = Web3.to_checksum_address("0xa98ea6356A316b44Bf710D5f9b6b4eA0081409Ef")
     routerContract = client.eth.contract(address=routerAddress, abi=routerAbi)
     factoryContract = client.eth.contract(address=factoryAddress, abi=factoryAbi)
-    weth = Web3.toChecksumAddress("0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270")
+    weth = Web3.to_checksum_address("0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270")
     base_symbol = "MATIC"
     rugdocchain = '&chain=poly'
     modified = False
@@ -1838,13 +1838,13 @@ elif settings["EXCHANGE"] == 'cronos-vvs':
     else:
         print(timestamp(), 'Using IPCProvider')
         client = Web3(Web3.IPCProvider(my_provider))
-    print(timestamp(), "Cronos Chain Connected =", client.isConnected())
+    print(timestamp(), "Cronos Chain Connected =", client.is_connected())
     print(timestamp(), "Loading Smart Contracts...")
-    routerAddress = Web3.toChecksumAddress("0x145863Eb42Cf62847A6Ca784e6416C1682b1b2Ae")
-    factoryAddress = Web3.toChecksumAddress("0x3b44b2a187a7b3824131f8db5a74194d0a42fc15")
+    routerAddress = Web3.to_checksum_address("0x145863Eb42Cf62847A6Ca784e6416C1682b1b2Ae")
+    factoryAddress = Web3.to_checksum_address("0x3b44b2a187a7b3824131f8db5a74194d0a42fc15")
     routerContract = client.eth.contract(address=routerAddress, abi=routerAbi)
     factoryContract = client.eth.contract(address=factoryAddress, abi=factoryAbi)
-    weth = Web3.toChecksumAddress("0x5C7F8A570d578ED84E63fdFA7b1eE72dEae1AE23")
+    weth = Web3.to_checksum_address("0x5C7F8A570d578ED84E63fdFA7b1eE72dEae1AE23")
     base_symbol = "CRO"
     rugdocchain = '&chain=cronos'
     modified = False
@@ -1870,13 +1870,13 @@ elif settings["EXCHANGE"] == 'cronos-meerkat':
     else:
         print(timestamp(), 'Using IPCProvider')
         client = Web3(Web3.IPCProvider(my_provider))
-    print(timestamp(), "Cronos Chain Connected =", client.isConnected())
+    print(timestamp(), "Cronos Chain Connected =", client.is_connected())
     print(timestamp(), "Loading Smart Contracts...")
-    routerAddress = Web3.toChecksumAddress("0x145677FC4d9b8F19B5D56d1820c48e0443049a30")
-    factoryAddress = Web3.toChecksumAddress("0xd590cC180601AEcD6eeADD9B7f2B7611519544f4")
+    routerAddress = Web3.to_checksum_address("0x145677FC4d9b8F19B5D56d1820c48e0443049a30")
+    factoryAddress = Web3.to_checksum_address("0xd590cC180601AEcD6eeADD9B7f2B7611519544f4")
     routerContract = client.eth.contract(address=routerAddress, abi=routerAbi)
     factoryContract = client.eth.contract(address=factoryAddress, abi=factoryAbi)
-    weth = Web3.toChecksumAddress("0x5c7f8a570d578ed84e63fdfa7b1ee72deae1ae23")
+    weth = Web3.to_checksum_address("0x5c7f8a570d578ed84e63fdfa7b1ee72deae1ae23")
     base_symbol = "CRO"
     rugdocchain = '&chain=cronos'
     modified = False
@@ -1902,13 +1902,13 @@ elif settings["EXCHANGE"] == 'cronos-crona':
     else:
         print(timestamp(), 'Using IPCProvider')
         client = Web3(Web3.IPCProvider(my_provider))
-    print(timestamp(), "Cronos Chain Connected =", client.isConnected())
+    print(timestamp(), "Cronos Chain Connected =", client.is_connected())
     print(timestamp(), "Loading Smart Contracts...")
-    routerAddress = Web3.toChecksumAddress("0xcd7d16fB918511BF7269eC4f48d61D79Fb26f918")
-    factoryAddress = Web3.toChecksumAddress("0x73A48f8f521EB31c55c0e1274dB0898dE599Cb11")
+    routerAddress = Web3.to_checksum_address("0xcd7d16fB918511BF7269eC4f48d61D79Fb26f918")
+    factoryAddress = Web3.to_checksum_address("0x73A48f8f521EB31c55c0e1274dB0898dE599Cb11")
     routerContract = client.eth.contract(address=routerAddress, abi=routerAbi)
     factoryContract = client.eth.contract(address=factoryAddress, abi=factoryAbi)
-    weth = Web3.toChecksumAddress("0x5c7f8a570d578ed84e63fdfa7b1ee72deae1ae23")
+    weth = Web3.to_checksum_address("0x5c7f8a570d578ed84e63fdfa7b1ee72deae1ae23")
     base_symbol = "CRO"
     rugdocchain = '&chain=cronos'
     modified = False
@@ -1935,15 +1935,15 @@ elif settings["EXCHANGE"] == 'viperswap':
         print(timestamp(), 'Using IPCProvider')
         client = Web3(Web3.IPCProvider(my_provider))
 
-    print(timestamp(), "HARMONY Chain Connected =", client.isConnected())
+    print(timestamp(), "HARMONY Chain Connected =", client.is_connected())
     print(timestamp(), "Loading WONE Smart Contracts...")
 
-    routerAddress = Web3.toChecksumAddress("0xf012702a5f0e54015362cbca26a26fc90aa832a3")
-    factoryAddress = Web3.toChecksumAddress("0x7D02c116b98d0965ba7B642ace0183ad8b8D2196")
+    routerAddress = Web3.to_checksum_address("0xf012702a5f0e54015362cbca26a26fc90aa832a3")
+    factoryAddress = Web3.to_checksum_address("0x7D02c116b98d0965ba7B642ace0183ad8b8D2196")
 
     routerContract = client.eth.contract(address=routerAddress, abi=routerAbi)
     factoryContract = client.eth.contract(address=factoryAddress, abi=factoryAbi)
-    weth = Web3.toChecksumAddress ("0xcf664087a5bb0237a0bad6742852ec6c8d69a27a")
+    weth = Web3.to_checksum_address ("0xcf664087a5bb0237a0bad6742852ec6c8d69a27a")
     base_symbol = "WONE"
     rugdocchain = '&chain=one'
     modified = False
@@ -2052,7 +2052,6 @@ interpretations = {
 def save_settings(settings, pwd):
     if len(pwd) > 0:
         encrypted_settings = settings.copy()
-        encrypted_settings['ALPHAWALLETPRIVATEKEY'] = 'aes:' + cryptocode.encrypt(settings['ALPHAWALLETPRIVATEKEY'], pwd)
         encrypted_settings['PRIVATEKEY'] = 'aes:' + cryptocode.encrypt(settings['PRIVATEKEY'], pwd)
         if settings['PRIVATEKEY2'] != 'null':
             encrypted_settings['PRIVATEKEY2'] = 'aes:' + cryptocode.encrypt(settings['PRIVATEKEY2'], pwd)
@@ -2153,28 +2152,6 @@ def parse_wallet_settings(settings, pwd):
     # returns: none (exits on incorrect password)
     
     settings_changed = False
-    
-    # Check for limit wallet information
-    if " " in settings['ALPHAWALLETADDRESS'] or settings['ALPHAWALLETADDRESS'] == "":
-        settings_changed = True
-        settings['ALPHAWALLETADDRESS'] = input("Please provide the wallet address where you have your ALPHA : ")
-    
-    # Check for limit wallet private key
-    if " " in settings['ALPHAWALLETPRIVATEKEY'] or settings['ALPHAWALLETPRIVATEKEY'] == "":
-        settings_changed = True
-        settings['ALPHAWALLETPRIVATEKEY'] = input("Please provide the private key for the wallet where you have your ALPHA : ")
-    
-    # If the limit wallet private key is already set and encrypted, decrypt it
-    elif settings['ALPHAWALLETPRIVATEKEY'].startswith('aes:'):
-        printt("Decrypting limit wallet private key.")
-        settings['ALPHAWALLETPRIVATEKEY'] = settings['ALPHAWALLETPRIVATEKEY'].replace('aes:', "", 1)
-        settings['ALPHAWALLETPRIVATEKEY'] = cryptocode.decrypt(settings['ALPHAWALLETPRIVATEKEY'], pwd)
-        
-        if settings['ALPHAWALLETPRIVATEKEY'] == False:
-            printt_err("ERROR: Your private key decryption password is incorrect")
-            printt_err("Please re-launch the bot and try again")
-            sleep(10)
-            sys.exit()
     
     # Check for trading wallet information
     if " " in settings['WALLETADDRESS'] or settings['WALLETADDRESS'] == "":
@@ -2292,7 +2269,7 @@ def decimals(address):
     # returns: returns the number of tokens for this contract
 
     try:
-        balanceContract = client.eth.contract(address=Web3.toChecksumAddress(address), abi=standardAbi)
+        balanceContract = client.eth.contract(address=Web3.to_checksum_address(address), abi=standardAbi)
         decimals = balanceContract.functions.decimals().call()
         DECIMALS = 10 ** decimals
     except ABIFunctionNotFound:
@@ -2319,43 +2296,10 @@ def check_logs():
     f.close()
 
 
-def decode_key():
-    printt_debug("ENTER decode_key")
-    private_key = settings['ALPHAWALLETPRIVATEKEY']
-    acct = client.eth.account.privateKeyToAccount(private_key)
-    addr = acct.address
-    return addr
-
-
-def auth():
-    my_provider2 = 'https://rpc-mainnet.kcc.network'
-    client2 = Web3(Web3.HTTPProvider(my_provider2))
-    print(timestamp(), "Connected to KCC, checking your ALPHA balance... =", client2.isConnected())
-    address = Web3.toChecksumAddress("0x0490c1076552ed3c91876ead9f6a547b389e69d4")
-    abi = standardAbi
-    balanceContract = client2.eth.contract(address=address, abi=abi)
-    decimals = balanceContract.functions.decimals().call()
-    DECIMALS = 10 ** decimals
-    
-    # Exception for incorrect Key Input
-    try:
-        decode = decode_key()
-    except Exception:
-        printt_err("There is a problem with your private key: please check if it's correct. Don't enter your seed phrase!")
-        sleep(10)
-        sys.exit()
-    
-    wallet_address = Web3.toChecksumAddress(decode)
-    balance = balanceContract.functions.balanceOf(wallet_address).call()
-    true_balance = balance / DECIMALS
-    printt("Current Tokens Staked = ", true_balance, write_to_log=False)
-    return true_balance
-
-
 def approve(address, amount):
     print(timestamp(), "Approving", address)
     
-    eth_balance = Web3.fromWei(client.eth.getBalance(settings['WALLETADDRESS']), 'ether')
+    eth_balance = Web3.from_wei(client.eth.get_balance(settings['WALLETADDRESS']), 'ether')
     
     if base_symbol == "ETH ":
         minimumbalance = 0.05
@@ -2373,11 +2317,11 @@ def approve(address, amount):
             gas = (((client.eth.gasPrice) / 1000000000)) + ((client.eth.gasPrice) / 1000000000) * (int(20) / 100)
             printt("Current Gas Price = ", gas)
             
-        contract = client.eth.contract(address=Web3.toChecksumAddress(address), abi=standardAbi)
+        contract = client.eth.contract(address=Web3.to_checksum_address(address), abi=standardAbi)
         transaction = contract.functions.approve(routerAddress, amount).buildTransaction({
             'gasPrice': Web3.toWei(gas, 'gwei'),
             'gas': 1000000,
-            'from': Web3.toChecksumAddress(settings['WALLETADDRESS']),
+            'from': Web3.to_checksum_address(settings['WALLETADDRESS']),
             'nonce': client.eth.getTransactionCount(settings['WALLETADDRESS'])
         })
         signed_txn = client.eth.account.signTransaction(transaction, private_key=settings['PRIVATEKEY'])
@@ -2397,8 +2341,8 @@ def approve(address, amount):
 def check_approval(token, address, allowance_to_compare_with, condition):
     printt_debug("ENTER check_approval()")
     printt("Checking Approval Status", address)
-    contract = client.eth.contract(address=Web3.toChecksumAddress(address), abi=standardAbi)
-    actual_allowance = contract.functions.allowance(Web3.toChecksumAddress(settings['WALLETADDRESS']), routerAddress).call()
+    contract = client.eth.contract(address=Web3.to_checksum_address(address), abi=standardAbi)
+    actual_allowance = contract.functions.allowance(Web3.to_checksum_address(settings['WALLETADDRESS']), routerAddress).call()
     
     printt_debug("actual_allowance 1591          :", actual_allowance)
     printt_debug("allowance_to_compare_with 1592 :", allowance_to_compare_with)
@@ -2450,8 +2394,8 @@ def check_approval(token, address, allowance_to_compare_with, condition):
 
 
 def check_bnb_balance():
-    balance = client.eth.getBalance(settings['WALLETADDRESS'])
-    printt("Current Wallet Balance is :", Web3.fromWei(balance, 'ether'), base_symbol, write_to_log=True)
+    balance = client.eth.get_balance(settings['WALLETADDRESS'])
+    printt("Current Wallet Balance is :", Web3.from_wei(balance, 'ether'), base_symbol, write_to_log=True)
     return balance
 
 
@@ -2468,7 +2412,7 @@ def check_balance(address, symbol='UNKNOWN_TOKEN', display_quantity=True):
     
     printt_debug("ENTER: check_balance() for " + address)
     
-    address = Web3.toChecksumAddress(address)
+    address = Web3.to_checksum_address(address)
     DECIMALS = decimals(address)
     balanceContract = client.eth.contract(address=address, abi=standardAbi)
     
@@ -2633,7 +2577,7 @@ def wait_for_open_trade(token, inToken, outToken):
     # If we look for Pinksale sales, we look into the Presale Address's transactions for 0x4bb278f3 methodID
     try:
         if token['WAIT_FOR_OPEN_TRADE'] == 'pinksale':
-            tx_filter = client.eth.filter({"filter_params": "pending", "address": Web3.toChecksumAddress(token['PINKSALE_PRESALE_ADDRESS'])})
+            tx_filter = client.eth.filter({"filter_params": "pending", "address": Web3.to_checksum_address(token['PINKSALE_PRESALE_ADDRESS'])})
         else:
             tx_filter = client.eth.filter({"filter_params": "pending", "address": inToken})
     except Exception as e:
@@ -2643,7 +2587,7 @@ def wait_for_open_trade(token, inToken, outToken):
         # Function: finalize() - check examples below
         list_of_methodId = ["0x4bb278f3"]
     else:
-        list_of_methodId = ["0xc9567bf9", "0x8a8c523c", "0x0d295980", "0xbccce037", "0x4efac329", "0x7b9e987a", "0x6533e038", "0x8f70ccf7", "0xa6334231", "0x48dfea0a", "0xc818c280", "0xade87098", "0x0099d386", "0xfb201b1d", "0x293230b8", "0x68c5111a", "0xc49b9a80", "0xc00f04d1", "0xcd2a11be", "0xa0ac5e19", "0x1d97b7cd", "0xf275f64b", "0x5e83ae76", "0x82aa7c68"]
+        list_of_methodId = ["0xc9567bf9", "0x8a8c523c", "0x0d295980", "0xbccce037", "0x4efac329", "0x7b9e987a", "0x6533e038", "0x8f70ccf7", "0xa6334231", "0x48dfea0a", "0xa63342310xa6334231", "0xade87098", "0x0099d386", "0xfb201b1d", "0x293230b8", "0x68c5111a", "0xc49b9a80", "0xc00f04d1", "0xcd2a11be", "0xa0ac5e19", "0x1d97b7cd", "0xf275f64b", "0x5e83ae76", "0x82aa7c68"]
 
     while openTrade == False:
     
@@ -2784,7 +2728,7 @@ def check_liquidity_amount(token, DECIMALS_OUT, DECIMALS_weth):
     
     printt_debug("ENTER: check_liquidity_amount()")
     
-    inToken = Web3.toChecksumAddress(token['ADDRESS'])
+    inToken = Web3.to_checksum_address(token['ADDRESS'])
     
     # Cases 1 and 2 above : we always use weth as LP pair to check liquidity
     if token["LIQUIDITYINNATIVETOKEN"] == 'true':
@@ -2818,7 +2762,7 @@ def check_liquidity_amount(token, DECIMALS_OUT, DECIMALS_weth):
         # 1/ calculate Custom Base token price in ETH/BNB...
         # 2/ convert this Custom Base token price in $
         
-        outToken = Web3.toChecksumAddress(token['BASEADDRESS'])
+        outToken = Web3.to_checksum_address(token['BASEADDRESS'])
         printt_debug("check_liquidity_amount case 1")
 
         liquidity_amount = check_pool(inToken, outToken, token['_LIQUIDITY_DECIMALS'])
@@ -3133,7 +3077,7 @@ def calculate_base_price():
     
         # USD 0x0039f574ee5cc39bdd162e9a88e3eb1f111baf48
     
-        #address = Web3.toChecksumAddress('0x0039f574ee5cc39bdd162e9a88e3eb1f111baf48')
+        #address = Web3.to_checksum_address('0x0039f574ee5cc39bdd162e9a88e3eb1f111baf48')
         #pair_address = fetch_pair2(address, weth, factoryContract)
     
         pair_address = '0x6c31e0F5c07b81A87120cc58c4dcc3fbafb00367'
@@ -3228,7 +3172,7 @@ def calculate_base_balance(token):
         minimumbalance = 0.03
 
     try:
-        eth_balance = Web3.fromWei(client.eth.getBalance(settings['WALLETADDRESS']), 'ether')
+        eth_balance = Web3.from_wei(client.eth.get_balance(settings['WALLETADDRESS']), 'ether')
     except Exception as e:
         printt_err("ERROR with your node : please check logs.", write_to_log=True)
         logger1.exception(e)
@@ -3242,10 +3186,10 @@ def calculate_base_balance(token):
 
     # STEP 2 - update token['_BASE_BALANCE'] or token['_CUSTOM_BASE_BALANCE']
     if token['USECUSTOMBASEPAIR'].lower() == 'false':
-        token['_BASE_BALANCE'] = Web3.fromWei(check_bnb_balance(), 'ether')
+        token['_BASE_BALANCE'] = Web3.from_wei(check_bnb_balance(), 'ether')
         printt_debug("token['_BASE_BALANCE'] in calculate_base_balance:", token['_BASE_BALANCE'])
     else:
-        address = Web3.toChecksumAddress(token['BASEADDRESS'])
+        address = Web3.to_checksum_address(token['BASEADDRESS'])
         DECIMALS = decimals(address)
         balance_check = check_balance(token['BASEADDRESS'], token['BASESYMBOL'])
         token['_CUSTOM_BASE_BALANCE'] = balance_check / DECIMALS
@@ -3340,13 +3284,13 @@ def make_the_buy(inToken, outToken, buynumber, pwd, amount, gas, gaslimit, gaspr
                     transaction = routerContract.functions.swapExactETHForTokens(
                         amountOutMin,
                         [weth, outToken],
-                        Web3.toChecksumAddress(walletused),
+                        Web3.to_checksum_address(walletused),
                         deadline
                     ).buildTransaction({
                         'gasPrice': Web3.toWei(gas, 'gwei'),
                         'gas': gaslimit,
                         'value': amount,
-                        'from': Web3.toChecksumAddress(walletused),
+                        'from': Web3.to_checksum_address(walletused),
                         'nonce': client.eth.getTransactionCount(walletused)
                     })
                 
@@ -3355,13 +3299,13 @@ def make_the_buy(inToken, outToken, buynumber, pwd, amount, gas, gaslimit, gaspr
                     transaction = routerContract.functions.swapExactAVAXForTokens(
                         amountOutMin,
                         [weth, outToken],
-                        Web3.toChecksumAddress(walletused),
+                        Web3.to_checksum_address(walletused),
                         deadline
                     ).buildTransaction({
                         'gasPrice': Web3.toWei(gas, 'gwei'),
                         'gas': gaslimit,
                         'value': amount,
-                        'from': Web3.toChecksumAddress(walletused),
+                        'from': Web3.to_checksum_address(walletused),
                         'nonce': client.eth.getTransactionCount(walletused)
                     })
 
@@ -3370,13 +3314,13 @@ def make_the_buy(inToken, outToken, buynumber, pwd, amount, gas, gaslimit, gaspr
                     transaction = routerContract.functions.swapExactBNBForTokens(
                         amountOutMin,
                         [weth, outToken],
-                        Web3.toChecksumAddress(walletused),
+                        Web3.to_checksum_address(walletused),
                         deadline
                     ).buildTransaction({
                         'gasPrice': Web3.toWei(gas, 'gwei'),
                         'gas': gaslimit,
                         'value': amount,
-                        'from': Web3.toChecksumAddress(walletused),
+                        'from': Web3.to_checksum_address(walletused),
                         'nonce': client.eth.getTransactionCount(walletused)
                     })
 
@@ -3394,14 +3338,14 @@ def make_the_buy(inToken, outToken, buynumber, pwd, amount, gas, gaslimit, gaspr
                     transaction = routerContract.functions.swapExactETHForTokens(
                         amountOutMin,
                         [weth, outToken],
-                        Web3.toChecksumAddress(walletused),
+                        Web3.to_checksum_address(walletused),
                         deadline
                     ).buildTransaction({
                         'maxFeePerGas': Web3.toWei(gas, 'gwei'),
                         'maxPriorityFeePerGas': Web3.toWei(gaspriority, 'gwei'),
                         'gas': gaslimit,
                         'value': amount,
-                        'from': Web3.toChecksumAddress(walletused),
+                        'from': Web3.to_checksum_address(walletused),
                         'nonce': client.eth.getTransactionCount(walletused),
                         'type': "0x02"
                     })
@@ -3414,13 +3358,13 @@ def make_the_buy(inToken, outToken, buynumber, pwd, amount, gas, gaslimit, gaspr
                     transaction = routerContract.functions.swapExactETHForTokens(
                         amountOutMin,
                         [weth, outToken],
-                        Web3.toChecksumAddress(walletused),
+                        Web3.to_checksum_address(walletused),
                         deadline
                     ).buildTransaction({
                         'gasPrice': Web3.toWei(gas, 'gwei'),
                         'gas': gaslimit,
                         'value': amount,
-                        'from': Web3.toChecksumAddress(walletused),
+                        'from': Web3.to_checksum_address(walletused),
                         'nonce': client.eth.getTransactionCount(walletused)
                     })
     
@@ -3445,13 +3389,13 @@ def make_the_buy(inToken, outToken, buynumber, pwd, amount, gas, gaslimit, gaspr
                     amount,
                     amountOutMin,
                     [weth, outToken],
-                    Web3.toChecksumAddress(walletused),
+                    Web3.to_checksum_address(walletused),
                     deadline
                 ).buildTransaction({
                     'maxFeePerGas': Web3.toWei(gas, 'gwei'),
                     'maxPriorityFeePerGas': Web3.toWei(gaspriority, 'gwei'),
                     'gas': gaslimit,
-                    'from': Web3.toChecksumAddress(walletused),
+                    'from': Web3.to_checksum_address(walletused),
                     'nonce': client.eth.getTransactionCount(walletused),
                     'type': "0x02"
                 })
@@ -3462,12 +3406,12 @@ def make_the_buy(inToken, outToken, buynumber, pwd, amount, gas, gaslimit, gaspr
                     amount,
                     amountOutMin,
                     [weth, outToken],
-                    Web3.toChecksumAddress(walletused),
+                    Web3.to_checksum_address(walletused),
                     deadline
                 ).buildTransaction({
                     'gasPrice': Web3.toWei(gas, 'gwei'),
                     'gas': gaslimit,
-                    'from': Web3.toChecksumAddress(walletused),
+                    'from': Web3.to_checksum_address(walletused),
                     'nonce': client.eth.getTransactionCount(walletused)
                 })
         
@@ -3505,14 +3449,14 @@ def make_the_buy(inToken, outToken, buynumber, pwd, amount, gas, gaslimit, gaspr
                         amount,
                         amountOutMin,
                         [inToken, weth, outToken],
-                        Web3.toChecksumAddress(walletused),
+                        Web3.to_checksum_address(walletused),
                         deadline
                     ).buildTransaction({
                         'maxFeePerGas': Web3.toWei(gas, 'gwei'),
                         'maxPriorityFeePerGas': Web3.toWei(gaspriority, 'gwei'),
                         'gas': gaslimit,
                         'value': amount,
-                        'from': Web3.toChecksumAddress(walletused),
+                        'from': Web3.to_checksum_address(walletused),
                         'nonce': client.eth.getTransactionCount(walletused),
                         'type': "0x02"
                     })
@@ -3527,12 +3471,12 @@ def make_the_buy(inToken, outToken, buynumber, pwd, amount, gas, gaslimit, gaspr
                         amount,
                         amountOutMin,
                         [inToken, weth, outToken],
-                        Web3.toChecksumAddress(walletused),
+                        Web3.to_checksum_address(walletused),
                         deadline
                     ).buildTransaction({
                         'gasPrice': Web3.toWei(gas, 'gwei'),
                         'gas': gaslimit,
-                        'from': Web3.toChecksumAddress(walletused),
+                        'from': Web3.to_checksum_address(walletused),
                         'nonce': client.eth.getTransactionCount(walletused)
                     })
             
@@ -3570,14 +3514,14 @@ def make_the_buy(inToken, outToken, buynumber, pwd, amount, gas, gaslimit, gaspr
                         amount,
                         amountOutMin,
                         [inToken, outToken],
-                        Web3.toChecksumAddress(walletused),
+                        Web3.to_checksum_address(walletused),
                         deadline
                     ).buildTransaction({
                         'maxFeePerGas': Web3.toWei(gas, 'gwei'),
                         'maxPriorityFeePerGas': Web3.toWei(gaspriority, 'gwei'),
                         'gas': gaslimit,
                         'value': amount,
-                        'from': Web3.toChecksumAddress(walletused),
+                        'from': Web3.to_checksum_address(walletused),
                         'nonce': client.eth.getTransactionCount(walletused),
                         'type': "0x02"
                     })
@@ -3593,12 +3537,12 @@ def make_the_buy(inToken, outToken, buynumber, pwd, amount, gas, gaslimit, gaspr
                         amount,
                         amountOutMin,
                         [inToken, outToken],
-                        Web3.toChecksumAddress(walletused),
+                        Web3.to_checksum_address(walletused),
                         deadline
                     ).buildTransaction({
                         'gasPrice': Web3.toWei(gas, 'gwei'),
                         'gas': gaslimit,
-                        'from': Web3.toChecksumAddress(walletused),
+                        'from': Web3.to_checksum_address(walletused),
                         'nonce': client.eth.getTransactionCount(walletused)
                     })
         
@@ -3736,13 +3680,13 @@ def make_the_buy_exact_tokens(token_dict, inToken, outToken, buynumber, pwd, gas
                     transaction = routerContract.functions.swapETHForExactTokens(
                         amount,
                         [weth, outToken],
-                        Web3.toChecksumAddress(walletused),
+                        Web3.to_checksum_address(walletused),
                         deadline
                     ).buildTransaction({
                         'gasPrice': Web3.toWei(gas, 'gwei'),
                         'gas': gaslimit,
                         'value': amount_in,
-                        'from': Web3.toChecksumAddress(walletused),
+                        'from': Web3.to_checksum_address(walletused),
                         'nonce': client.eth.getTransactionCount(walletused)
                     })
                 
@@ -3751,13 +3695,13 @@ def make_the_buy_exact_tokens(token_dict, inToken, outToken, buynumber, pwd, gas
                     transaction = routerContract.functions.swapAVAXForExactTokens(
                         amount,
                         [weth, outToken],
-                        Web3.toChecksumAddress(walletused),
+                        Web3.to_checksum_address(walletused),
                         deadline
                     ).buildTransaction({
                         'gasPrice': Web3.toWei(gas, 'gwei'),
                         'gas': gaslimit,
                         'value': amount_in,
-                        'from': Web3.toChecksumAddress(walletused),
+                        'from': Web3.to_checksum_address(walletused),
                         'nonce': client.eth.getTransactionCount(walletused)
                     })
 
@@ -3766,13 +3710,13 @@ def make_the_buy_exact_tokens(token_dict, inToken, outToken, buynumber, pwd, gas
                     transaction = routerContract.functions.swapBNBForExactTokens(
                         amount,
                         [weth, outToken],
-                        Web3.toChecksumAddress(walletused),
+                        Web3.to_checksum_address(walletused),
                         deadline
                     ).buildTransaction({
                         'gasPrice': Web3.toWei(gas, 'gwei'),
                         'gas': gaslimit,
                         'value': amount_in,
-                        'from': Web3.toChecksumAddress(walletused),
+                        'from': Web3.to_checksum_address(walletused),
                         'nonce': client.eth.getTransactionCount(walletused)
                     })
 
@@ -3788,14 +3732,14 @@ def make_the_buy_exact_tokens(token_dict, inToken, outToken, buynumber, pwd, gas
                     transaction = routerContract.functions.swapETHForExactTokens(
                         amount,
                         [weth, outToken],
-                        Web3.toChecksumAddress(walletused),
+                        Web3.to_checksum_address(walletused),
                         deadline
                     ).buildTransaction({
                         'maxFeePerGas': Web3.toWei(gas, 'gwei'),
                         'maxPriorityFeePerGas': Web3.toWei(gaspriority, 'gwei'),
                         'gas': gaslimit,
                         'value': amount_in,
-                        'from': Web3.toChecksumAddress(walletused),
+                        'from': Web3.to_checksum_address(walletused),
                         'nonce': client.eth.getTransactionCount(walletused),
                         'type': "0x02"
                     })
@@ -3809,13 +3753,13 @@ def make_the_buy_exact_tokens(token_dict, inToken, outToken, buynumber, pwd, gas
                     transaction = routerContract.functions.swapETHForExactTokens(
                         amount,
                         [weth, outToken],
-                        Web3.toChecksumAddress(walletused),
+                        Web3.to_checksum_address(walletused),
                         deadline
                     ).buildTransaction({
                         'gasPrice': Web3.toWei(gas, 'gwei'),
                         'gas': gaslimit,
                         'value': amount_in,
-                        'from': Web3.toChecksumAddress(walletused),
+                        'from': Web3.to_checksum_address(walletused),
                         'nonce': client.eth.getTransactionCount(walletused)
                     })
 
@@ -3925,10 +3869,10 @@ def preapprove_base(token):
     printt("AlphaBot will now check approval of your Base or Custom Base for", token['SYMBOL'], ", to ensure you can use it")
     
     if token['USECUSTOMBASEPAIR'].lower() == 'false':
-        balanceweth = Web3.fromWei(client.eth.getBalance(settings['WALLETADDRESS']), 'ether')
+        balanceweth = Web3.from_wei(client.eth.get_balance(settings['WALLETADDRESS']), 'ether')
         check_approval(token, weth, balanceweth * decimals(weth), 'base_approve')
     else:
-        balancebase = Web3.fromWei(check_balance(token['BASEADDRESS'], token['BASESYMBOL'], display_quantity=False), 'ether')
+        balancebase = Web3.from_wei(check_balance(token['BASEADDRESS'], token['BASESYMBOL'], display_quantity=False), 'ether')
         check_approval(token, token['BASEADDRESS'], balancebase * decimals(token['BASEADDRESS']), 'base_approve')
  
     printt_debug("EXIT - preapprove_base()")
@@ -4261,12 +4205,12 @@ def sell(token_dict, inToken, outToken):
                             amount,
                             amountOutMin,
                             [inToken, weth],
-                            Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                            Web3.to_checksum_address(settings['WALLETADDRESS']),
                             deadline
                         ).buildTransaction({
                             'gasPrice': Web3.toWei(gas, 'gwei'),
                             'gas': gaslimit,
-                            'from': Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                            'from': Web3.to_checksum_address(settings['WALLETADDRESS']),
                             'nonce': client.eth.getTransactionCount(settings['WALLETADDRESS'])
                         })
                     
@@ -4276,12 +4220,12 @@ def sell(token_dict, inToken, outToken):
                             amount,
                             amountOutMin,
                             [inToken, weth],
-                            Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                            Web3.to_checksum_address(settings['WALLETADDRESS']),
                             deadline
                         ).buildTransaction({
                             'gasPrice': Web3.toWei(gas, 'gwei'),
                             'gas': gaslimit,
-                            'from': Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                            'from': Web3.to_checksum_address(settings['WALLETADDRESS']),
                             'nonce': client.eth.getTransactionCount(settings['WALLETADDRESS'])
                         })
 
@@ -4291,12 +4235,12 @@ def sell(token_dict, inToken, outToken):
                             amount,
                             amountOutMin,
                             [inToken, weth],
-                            Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                            Web3.to_checksum_address(settings['WALLETADDRESS']),
                             deadline
                         ).buildTransaction({
                             'gasPrice': Web3.toWei(gas, 'gwei'),
                             'gas': gaslimit,
-                            'from': Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                            'from': Web3.to_checksum_address(settings['WALLETADDRESS']),
                             'nonce': client.eth.getTransactionCount(settings['WALLETADDRESS'])
                         })
 
@@ -4309,12 +4253,12 @@ def sell(token_dict, inToken, outToken):
                         amount,
                         amountOutMin,
                         [inToken, weth],
-                        Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                        Web3.to_checksum_address(settings['WALLETADDRESS']),
                         deadline
                     ).buildTransaction({
                         'gasPrice': Web3.toWei(gas, 'gwei'),
                         'gas': gaslimit,
-                        'from': Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                        'from': Web3.to_checksum_address(settings['WALLETADDRESS']),
                         'nonce': client.eth.getTransactionCount(settings['WALLETADDRESS'])
                     })
             else:
@@ -4333,12 +4277,12 @@ def sell(token_dict, inToken, outToken):
                             amount,
                             amountOutMin,
                             [inToken, outToken],
-                            Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                            Web3.to_checksum_address(settings['WALLETADDRESS']),
                             deadline
                         ).buildTransaction({
                             'gasPrice': Web3.toWei(gas, 'gwei'),
                             'gas': gaslimit,
-                            'from': Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                            'from': Web3.to_checksum_address(settings['WALLETADDRESS']),
                             'nonce': client.eth.getTransactionCount(settings['WALLETADDRESS'])
                         })
                     elif settings["EXCHANGE"].lower() == 'pangolin' or settings["EXCHANGE"].lower() == 'traderjoe':
@@ -4347,12 +4291,12 @@ def sell(token_dict, inToken, outToken):
                             amount,
                             amountOutMin,
                             [inToken, outToken],
-                            Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                            Web3.to_checksum_address(settings['WALLETADDRESS']),
                             deadline
                         ).buildTransaction({
                             'gasPrice': Web3.toWei(gas, 'gwei'),
                             'gas': gaslimit,
-                            'from': Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                            'from': Web3.to_checksum_address(settings['WALLETADDRESS']),
                             'nonce': client.eth.getTransactionCount(settings['WALLETADDRESS'])
                         })
                         
@@ -4362,12 +4306,12 @@ def sell(token_dict, inToken, outToken):
                             amount,
                             amountOutMin,
                             [inToken, outToken],
-                            Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                            Web3.to_checksum_address(settings['WALLETADDRESS']),
                             deadline
                         ).buildTransaction({
                             'gasPrice': Web3.toWei(gas, 'gwei'),
                             'gas': gaslimit,
-                            'from': Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                            'from': Web3.to_checksum_address(settings['WALLETADDRESS']),
                             'nonce': client.eth.getTransactionCount(settings['WALLETADDRESS'])
                         })
                 
@@ -4383,14 +4327,14 @@ def sell(token_dict, inToken, outToken):
                             amount,
                             amountOutMin,
                             [inToken, outToken],
-                            Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                            Web3.to_checksum_address(settings['WALLETADDRESS']),
                             deadline
                         ).buildTransaction({
                             'maxFeePerGas': Web3.toWei(gas, 'gwei'),
                             'maxPriorityFeePerGas': Web3.toWei(gaspriority, 'gwei'),
                             'gas': gaslimit,
                             'value': amount,
-                            'from': Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                            'from': Web3.to_checksum_address(settings['WALLETADDRESS']),
                             'nonce': client.eth.getTransactionCount(settings['WALLETADDRESS']),
                             'type': "0x02"
                         })
@@ -4402,12 +4346,12 @@ def sell(token_dict, inToken, outToken):
                             amount,
                             amountOutMin,
                             [inToken, outToken],
-                            Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                            Web3.to_checksum_address(settings['WALLETADDRESS']),
                             deadline
                         ).buildTransaction({
                             'gasPrice': Web3.toWei(gas, 'gwei'),
                             'gas': gaslimit,
-                            'from': Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                            'from': Web3.to_checksum_address(settings['WALLETADDRESS']),
                             'nonce': client.eth.getTransactionCount(settings['WALLETADDRESS'])
                         })
         
@@ -4443,12 +4387,12 @@ def sell(token_dict, inToken, outToken):
                                 amount,
                                 amountOutMin,
                                 [inToken, weth],
-                                Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                                Web3.to_checksum_address(settings['WALLETADDRESS']),
                                 deadline
                             ).buildTransaction({
                                 'gasPrice': Web3.toWei(gas, 'gwei'),
                                 'gas': gaslimit,
-                                'from': Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                                'from': Web3.to_checksum_address(settings['WALLETADDRESS']),
                                 'nonce': client.eth.getTransactionCount(settings['WALLETADDRESS'])
                             })
                         
@@ -4458,12 +4402,12 @@ def sell(token_dict, inToken, outToken):
                                 amount,
                                 amountOutMin,
                                 [inToken, weth],
-                                Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                                Web3.to_checksum_address(settings['WALLETADDRESS']),
                                 deadline
                             ).buildTransaction({
                                 'gasPrice': Web3.toWei(gas, 'gwei'),
                                 'gas': gaslimit,
-                                'from': Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                                'from': Web3.to_checksum_address(settings['WALLETADDRESS']),
                                 'nonce': client.eth.getTransactionCount(settings['WALLETADDRESS'])
                             })
                             
@@ -4473,12 +4417,12 @@ def sell(token_dict, inToken, outToken):
                                 amount,
                                 amountOutMin,
                                 [inToken, weth],
-                                Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                                Web3.to_checksum_address(settings['WALLETADDRESS']),
                                 deadline
                             ).buildTransaction({
                                 'gasPrice': Web3.toWei(gas, 'gwei'),
                                 'gas': gaslimit,
-                                'from': Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                                'from': Web3.to_checksum_address(settings['WALLETADDRESS']),
                                 'nonce': client.eth.getTransactionCount(settings['WALLETADDRESS'])
                             })
                             
@@ -4491,12 +4435,12 @@ def sell(token_dict, inToken, outToken):
                             amount,
                             amountOutMin,
                             [inToken, weth],
-                            Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                            Web3.to_checksum_address(settings['WALLETADDRESS']),
                             deadline
                         ).buildTransaction({
                             'gasPrice': Web3.toWei(gas, 'gwei'),
                             'gas': gaslimit,
-                            'from': Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                            'from': Web3.to_checksum_address(settings['WALLETADDRESS']),
                             'nonce': client.eth.getTransactionCount(settings['WALLETADDRESS'])
                         })
                 else:
@@ -4507,12 +4451,12 @@ def sell(token_dict, inToken, outToken):
                         amount,
                         amountOutMin,
                         [inToken, weth],
-                        Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                        Web3.to_checksum_address(settings['WALLETADDRESS']),
                         deadline
                     ).buildTransaction({
                         'gasPrice': Web3.toWei(gas, 'gwei'),
                         'gas': gaslimit,
-                        'from': Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                        'from': Web3.to_checksum_address(settings['WALLETADDRESS']),
                         'nonce': client.eth.getTransactionCount(settings['WALLETADDRESS'])
                     })
             
@@ -4542,14 +4486,14 @@ def sell(token_dict, inToken, outToken):
                                 amount,
                                 amountOutMin,
                                 [inToken, outToken],
-                                Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                                Web3.to_checksum_address(settings['WALLETADDRESS']),
                                 deadline
                             ).buildTransaction({
                                 'maxFeePerGas': Web3.toWei(gas, 'gwei'),
                                 'maxPriorityFeePerGas': Web3.toWei(gaspriority, 'gwei'),
                                 'gas': gaslimit,
                                 'value': amount,
-                                'from': Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                                'from': Web3.to_checksum_address(settings['WALLETADDRESS']),
                                 'nonce': client.eth.getTransactionCount(settings['WALLETADDRESS']),
                                 'type': "0x02"
                             })
@@ -4561,12 +4505,12 @@ def sell(token_dict, inToken, outToken):
                                 amount,
                                 amountOutMin,
                                 [inToken, outToken],
-                                Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                                Web3.to_checksum_address(settings['WALLETADDRESS']),
                                 deadline
                             ).buildTransaction({
                                 'gasPrice': Web3.toWei(gas, 'gwei'),
                                 'gas': gaslimit,
-                                'from': Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                                'from': Web3.to_checksum_address(settings['WALLETADDRESS']),
                                 'nonce': client.eth.getTransactionCount(settings['WALLETADDRESS'])
                             })
                     
@@ -4581,14 +4525,14 @@ def sell(token_dict, inToken, outToken):
                                 amount,
                                 amountOutMin,
                                 [inToken, outToken],
-                                Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                                Web3.to_checksum_address(settings['WALLETADDRESS']),
                                 deadline
                             ).buildTransaction({
                                 'maxFeePerGas': Web3.toWei(gas, 'gwei'),
                                 'maxPriorityFeePerGas': Web3.toWei(gaspriority, 'gwei'),
                                 'gas': gaslimit,
                                 'value': amount,
-                                'from': Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                                'from': Web3.to_checksum_address(settings['WALLETADDRESS']),
                                 'nonce': client.eth.getTransactionCount(settings['WALLETADDRESS']),
                                 'type': "0x02"
                             })
@@ -4600,12 +4544,12 @@ def sell(token_dict, inToken, outToken):
                                 amount,
                                 amountOutMin,
                                 [inToken, outToken],
-                                Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                                Web3.to_checksum_address(settings['WALLETADDRESS']),
                                 deadline
                             ).buildTransaction({
                                 'gasPrice': Web3.toWei(gas, 'gwei'),
                                 'gas': gaslimit,
-                                'from': Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                                'from': Web3.to_checksum_address(settings['WALLETADDRESS']),
                                 'nonce': client.eth.getTransactionCount(settings['WALLETADDRESS'])
                             })
                 
@@ -4636,14 +4580,14 @@ def sell(token_dict, inToken, outToken):
                                 amount,
                                 amountOutMin,
                                 [inToken, weth, outToken],
-                                Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                                Web3.to_checksum_address(settings['WALLETADDRESS']),
                                 deadline
                             ).buildTransaction({
                                 'maxFeePerGas': Web3.toWei(gas, 'gwei'),
                                 'maxPriorityFeePerGas': Web3.toWei(gaspriority, 'gwei'),
                                 'gas': gaslimit,
                                 'value': amount,
-                                'from': Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                                'from': Web3.to_checksum_address(settings['WALLETADDRESS']),
                                 'nonce': client.eth.getTransactionCount(settings['WALLETADDRESS']),
                                 'type': "0x02"
                             })
@@ -4654,12 +4598,12 @@ def sell(token_dict, inToken, outToken):
                                 amount,
                                 amountOutMin,
                                 [inToken, weth, outToken],
-                                Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                                Web3.to_checksum_address(settings['WALLETADDRESS']),
                                 deadline
                             ).buildTransaction({
                                 'gasPrice': Web3.toWei(gas, 'gwei'),
                                 'gas': gaslimit,
-                                'from': Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                                'from': Web3.to_checksum_address(settings['WALLETADDRESS']),
                                 'nonce': client.eth.getTransactionCount(settings['WALLETADDRESS'])
                             })
                     
@@ -4672,14 +4616,14 @@ def sell(token_dict, inToken, outToken):
                                 amount,
                                 amountOutMin,
                                 [inToken, weth, outToken],
-                                Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                                Web3.to_checksum_address(settings['WALLETADDRESS']),
                                 deadline
                             ).buildTransaction({
                                 'maxFeePerGas': Web3.toWei(gas, 'gwei'),
                                 'maxPriorityFeePerGas': Web3.toWei(gaspriority, 'gwei'),
                                 'gas': gaslimit,
                                 'value': amount,
-                                'from': Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                                'from': Web3.to_checksum_address(settings['WALLETADDRESS']),
                                 'nonce': client.eth.getTransactionCount(settings['WALLETADDRESS']),
                                 'type': "0x02"
                             })
@@ -4689,12 +4633,12 @@ def sell(token_dict, inToken, outToken):
                                 amount,
                                 amountOutMin,
                                 [inToken, weth, outToken],
-                                Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                                Web3.to_checksum_address(settings['WALLETADDRESS']),
                                 deadline
                             ).buildTransaction({
                                 'gasPrice': Web3.toWei(gas, 'gwei'),
                                 'gas': gaslimit,
-                                'from': Web3.toChecksumAddress(settings['WALLETADDRESS']),
+                                'from': Web3.to_checksum_address(settings['WALLETADDRESS']),
                                 'nonce': client.eth.getTransactionCount(settings['WALLETADDRESS'])
                             })
         
@@ -4731,13 +4675,13 @@ def benchmark():
     token = load_tokens_file(command_line_args.tokens, False)
     token[0]['_WETH_DECIMALS'] = int(decimals(weth))
     token[0]['_CONTRACT_DECIMALS'] = int(decimals(token[0]['ADDRESS']))
-    inToken = Web3.toChecksumAddress(token[0]['ADDRESS'])
+    inToken = Web3.to_checksum_address(token[0]['ADDRESS'])
     if token[0]['USECUSTOMBASEPAIR'] == 'true':
         printt('Testing with USECUSTOMBASEPAIR ')
     
         token[0]['_BASE_DECIMALS'] = int(decimals(token[0]['BASEADDRESS']))
         token[0]['_LIQUIDITY_DECIMALS'] = int(decimals(token[0]['BASEADDRESS']))
-        outToken = Web3.toChecksumAddress(token[0]['BASEADDRESS'])
+        outToken = Web3.to_checksum_address(token[0]['BASEADDRESS'])
     else:
         token[0]['_BASE_DECIMALS'] = int(decimals(weth))
         token[0]['_LIQUIDITY_DECIMALS'] = int(decimals(weth))
@@ -4827,11 +4771,11 @@ def run():
 
             # Set the checksum addressed for the addresses we're working with
             # _IN_TOKEN is the token you want to BUY (example : CAKE)
-            token['_IN_TOKEN'] = Web3.toChecksumAddress(token['ADDRESS'])
+            token['_IN_TOKEN'] = Web3.to_checksum_address(token['ADDRESS'])
     
             # _OUT_TOKEN is the token you want to TRADE WITH (example : ETH or USDT)
             if token['USECUSTOMBASEPAIR'] == 'true':
-                token['_OUT_TOKEN'] = Web3.toChecksumAddress(token['BASEADDRESS'])
+                token['_OUT_TOKEN'] = Web3.to_checksum_address(token['BASEADDRESS'])
             else:
                 token['_OUT_TOKEN'] = weth
     
@@ -5373,33 +5317,16 @@ try:
     # Handle any processing that is necessary to load the private key for the wallet
     parse_wallet_settings(settings, userpassword)
     
-    # The ALPHA  balance of the user.
-    true_balance = auth()
-    
-    if true_balance >= 0:
-        print(timestamp(), "Subscriptions Active")
-        if command_line_args.slow_mode or settings['SLOW_MODE'] == 'true':
-            printt_info("RUNNING IN SLOW MODE = price check every 0.5s")
-            cooldown = 0.50
-        elif settings['SLOW_MODE'] == 'super_slow':
-            printt_info("RUNNING IN SUPER SLOW MODE = price check every 3s")
-            cooldown = 3
-        else:
-            cooldown = 0.01
-        runLoop()
-    
-    elif true_balance >= 69 and true_balance < 90:
-        print(timestamp(), "Subscriptions Active")
+    # Set cooldown base on setting
+    if command_line_args.slow_mode or settings['SLOW_MODE'] == 'true':
+        printt_info("RUNNING IN SLOW MODE = price check every 0.5s")
+        cooldown = 0.50
+    elif settings['SLOW_MODE'] == 'super_slow':
+        printt_info("RUNNING IN SUPER SLOW MODE = price check every 3s")
         cooldown = 3
-        runLoop()
-    elif true_balance >= 46 and true_balance < 69:
-        print(timestamp(), "Beta Subscriptions Active")
-        cooldown = 6
-        runLoop()
     else:
-        printt_err("46 - 90 ALPHA tokens needed to use this bot, ALPHA tokens can be purchased on alphaswap.exchange")
-        sleep(10)
-        sys.exit()
+        cooldown = 0.01
+    runLoop()
 
 except Exception as e:
     printt_err("ERROR. Please go to /log folder and open your logs: you will find more details.")
